@@ -1133,7 +1133,8 @@
             {
               "zwave": {
                 "index": 10,
-                "size": 2
+                "size": 2,
+                "signed": false
               },
               "attr": {
                 "min": 0,
@@ -2666,7 +2667,7 @@
               },
               "attr": {
                 "min": 1,
-                "max": 65536
+                "max": 65535
               },
               "value": 30,
               "id": "motion_cancellation_delay",
@@ -4504,6 +4505,88 @@
       ]
     },
     {
+      "id": "FGR-221",
+      "name": {
+        "en": "Roller Shutter",
+        "nl": "Rolluik"
+      },
+      "class": "windowcoverings",
+      "capabilities": [],
+      "images": {
+        "large": "/drivers/FGR-221/assets/images/large.png",
+        "small": "/drivers/FGR-221/assets/images/small.png"
+      },
+      "zwave": {
+        "manufacturerId": 271,
+        "productTypeId": [
+          768
+        ],
+        "productId": [
+          258,
+          260,
+          261,
+          262,
+          263,
+          4106,
+          8202,
+          12298
+        ],
+        "zwaveAllianceProductId": 38,
+        "learnmode": {
+          "image": "/drivers/FGR-221/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press either the B-button or the first input on your Roller Shutter three times.",
+            "nl": "Druk driemaal op de B-knop op uw Rolluik, of schakel drie keer met het eerste input apparaat."
+          }
+        },
+        "associationGroups": [
+          3
+        ]
+      },
+      "settings": [
+        {
+          "id": "type_input",
+          "type": "dropdown",
+          "label": {
+            "en": "Switch type input",
+            "nl": "Schakelaar type ingang"
+          },
+          "hint": {
+            "en": "What type of switch is used",
+            "nl": "Welk type schakelaar wordt gebruikt"
+          },
+          "zwave": {
+            "index": 14,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Monostable switch",
+                "nl": "Puls schakelaar"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Toggle switch",
+                "nl": "Tuimel schakelaar"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Single monostable switch",
+                "nl": "Enkele puls schakelaar"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": {
         "en": "RGBW Controller"
       },
@@ -5440,7 +5523,7 @@
             {
               "zwave": {
                 "index": 43,
-                "size": 1,
+                "size": 2,
                 "signed": false
               },
               "attr": {
@@ -5490,14 +5573,14 @@
                   "id": "0",
                   "label": {
                     "en": "Changes in predefined steps according to power load",
-                    "nl": "Verandert in stappen afhankelijk van het stroom verbuik"
+                    "nl": "Verandert in stappen afhankelijk van het stroomverbuik"
                   }
                 },
                 {
                   "id": "1",
                   "label": {
                     "en": "Changes continuously according to power load using full spectrum of LED color",
-                    "nl": "Verandert continu afhankelijk van het stroom verbruik"
+                    "nl": "Verandert continu afhankelijk van het stroomverbruik"
                   }
                 },
                 {
@@ -5579,7 +5662,7 @@
                   "id": "0",
                   "label": {
                     "en": "LED ring is illuminated with a color corresponding to the last measured power, before the controlled device was turned off.",
-                    "nl": "LED ring is verlicht met een kleur die bij het laatst gemeten stroom verbruik hoort."
+                    "nl": "LED ring is verlicht met een kleur die bij het laatst gemeten stroomverbruik hoort."
                   }
                 },
                 {
@@ -5675,8 +5758,8 @@
         "learnmode": {
           "image": "/drivers/FGWPx-102-PLUS/assets/learnmode.svg",
           "instruction": {
-            "en": "Insert the {{driverNameEN}} in a socket or press the button on your Fibaro Wall Plug three times",
-            "nl": "Stop de {{driverNameNL}} in het stopcontact of druk driemaal op de knop op de Tussenstekker"
+            "en": "Insert the {{driverNameEN}} in a socket or press the button on your {{driverNameEN}} three times",
+            "nl": "Stop de {{driverNameNL}} in het stopcontact of druk driemaal op de knop op de {{driverNameNL}}"
           }
         },
         "associationGroups": [
@@ -5901,7 +5984,7 @@
               "value": "0",
               "hint": {
                 "en": "This parameter (41) defines the color of the LED ring in on state.",
-                "nl": "Deze parameter (41) beoaakt de kleur van de LED ring wanneer het apparaat aan staat."
+                "nl": "Deze parameter (41) bepaalt de kleur van de LED ring wanneer het apparaat aan staat."
               },
               "values": [
                 {
@@ -6081,8 +6164,8 @@
               },
               "value": "0",
               "hint": {
-                "en": "This parameter (20) determines what the association group 2 device behaviour is when the B-button is pressed.",
-                "nl": "Deze parameter (20) bepaalt wat de apparaten in de 2e associatie groep doen wanneer de B-knop wordt ingedrukt."
+                "en": "This parameter (20) determines the behaviour of the devices associated to group 2 when the B-button is pressed.",
+                "nl": "Deze parameter (20) bepaalt het gedrag van de apparaten in associatie groep 2 wanneer de B-knop ingedrukt word."
               },
               "values": [
                 {
